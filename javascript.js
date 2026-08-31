@@ -23,3 +23,12 @@ hamburger.addEventListener('click', function() {
     // Membuka tutup menu navigasi mobile
     navMenu.classList.toggle('hidden');
 });
+
+function downloadCV() {
+    const link = document.createElement('a');
+    link.href = 'pdf/CV_SEFTIAN_XI_RPL1.pdf'; // Pastikan path ini benar
+    link.download = 'CV_SEFTIAN_XI_RPL1.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
