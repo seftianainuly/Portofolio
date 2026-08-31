@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="src/output.css" rel="stylesheet">
+  <!-- Font Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    
+    /* Animasi Marquee untuk Project */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      display: flex;
+      width: max-content;
+      animation: scroll 20s linear infinite;
+    }
+    
+    .bg-dark-theme { background-color: #121519; } /* Warna bg utama */
+    .text-cyan-accent { color: #00e6a8; }
+    .bg-cyan-accent { background-color: #00e6a8; }
+    .bg-card-dark { background-color: #1e1e24; }
+  </style>
+</head>
+<body class="bg-dark-theme text-white overflow-x-hidden">
+
+<!-- Navbar -->
+<header class="bg-transparent fixed top-0 left-0 w-full flex items-center z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 sm:px-12 lg:px-16 py-4 flex items-center justify-end relative">
+        <div class="flex items-center">
+            <button id="hamburger" name="hamburger" type="button" class="block absolute lg:hidden right-6">
+                <span class="hamburger-line w-7.5 h-0.5 my-2 block bg-white transition duration-300 ease-in-out origin-top-left"></span>
+                <span class="hamburger-line w-7.5 h-0.5 my-2 block bg-white transition duration-300 ease-in-out"></span>
+                <span class="hamburger-line w-7.5 h-0.5 my-2 block bg-white transition duration-300 ease-in-out origin-bottom-left"></span>
+            </button>
+
+            <nav id="nav-menu" class="hidden lg:block absolute py-5 lg:py-0 bg-gray-900 lg:bg-transparent shadow-lg rounded-lg w-full top-full right-0 lg:static lg:max-w-full lg:shadow-none lg:rounded-none">
+                <ul class="block lg:flex font-semibold text-sm tracking-wide">
+                    <li>
+                        <a href="#home" class="block px-8 py-2 text-white lg:bg-cyan-accen lg:rounded-md lg:mx-2 uppercase">Home</a>
+                    </li>
+                    <li class="group">
+                        <a href="#about" class="block px-8 py-2 text-white hover:text-cyan-accent lg:mx-2 uppercase transition">About</a>
+                    </li>
+                    <li class="group">
+                        <a href="#project" class="block px-8 py-2 text-white hover:text-cyan-accent lg:mx-2 uppercase transition">Project</a>
+                    </li>
+                    <li class="group">
+                        <a href="#contact" class="block px-8 py-2 text-white hover:text-cyan-accent lg:mx-2 uppercase transition">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- Close Navbar -->
+
+<!-- Hero / Home Section -->
+<section id="home" class="min-h-screen flex items-center pt-24 pb-12 px-6 sm:px-12 lg:px-16">
+    <div class="container mx-auto">
+        <div class="flex flex-wrap items-center">
+            <!-- Image Left -->
+            <div class="w-full lg:w-5/12 mb-12 lg:mb-0 lg:mt-10 flex justify-center lg:justify-start">
+                <div class="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-100 lg:h-125">
+                    
+                        <!-- LAYER 1: Background & Foto Dasar (Body kiri terpotong di dalam shape) -->
+                        <div class="absolute inset-0 bg-gray-200 rounded-xl overflow-hidden shadow-[0_0_20px_rgba(0,230,168,0.2)]">
+                            <img src="img/geometric-background-colorful-gradient.png" alt="Geometric Shape" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-90">
+
+                            <img src="img/seftian.png" alt="Seftian Ainul Yaqin" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[135%] sm:w-[140%] lg:w-[145%] h-auto max-w-none origin-bottom scale-105">
+                        </div>
+                        <img src="img/seftian.png" alt="Seftian Ainul Yaqin Overlay" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[135%] sm:w-[140%] lg:w-[145%] h-auto max-w-none z-10 origin-bottom scale-105 drop-shadow-2xl pointer-events-none [clip-path:polygon(30%_0%,100%_0%,100%_100%,30%_50%)]">
+                    </div>
+                </div>
+            
+            <!-- Text Right -->
+            <div class="w-full lg:w-7/12 lg:pl-10">
+                <p class="text-gray-300 text-lg mb-2">Making a modern website with,</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-cyan-accent mb-6 uppercase tracking-wider">
+                    Seftian Ainul Yaqin
+                </h1>
+                
+                <p class="text-lg sm:text-xl text-gray-300 mb-6 max-w-2xl">
+                    Frontend Developer & UI/UX Designer specialized in building sleek, modern, and responsive web experiences
+                </p>
+                
+                <p class="text-base sm:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed">
+                    Saya membangun situs web modern, interaktif, dan responsif dengan fokus pada pengalaman pengguna yang terbaik.
+                </p>
+
+                <div class="flex flex-col gap-2 mb-8 text-gray-300">
+                    <div class="flex items-center gap-2">
+                        <img src="img/check.png" alt="Check" class="w-5 h-5 object-contain">
+                        Available for Hire
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-yellow-400"><img src="img/light.png" alt="Lightningt" class="w-5 h-5 object-contain"></span>
+                        Fast for Work
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/6285814963433?text=Halo%20Seftian,%20saya%20tertarik%20untuk%20bekerja%20sama." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="inline-block bg-cyan-accent text-black font-bold py-3 px-8 rounded-md hover:bg-teal-400 transition shadow-lg text-center">
+                        Contact Me
+                    </a>
+                    <button class="border-2 border-white text-white font-bold py-3 px-8 rounded-md hover:bg-white hover:text-black transition flex items-center gap-2">
+                        <img src="img/download.png" alt="Download" class="w-5 h-5 object-contain filter invert group-hover:invert-0">
+                        Download CV
+                    </button>
+                    
+                    <!-- Social Icons -->
+                    <div class="flex space-x-4 ml-auto mt-6 lg:mt-0 bg-white px-4 py-2 rounded-lg">
+                        <a href="#" class="text-black hover:text-cyan-accent"><img src="img/instagram.png" alt="Instagram" class="w-6 h-6 object-contain"></a>
+                        <a href="#" class="text-black hover:text-cyan-accent"><img src="img/github.png" alt="GitHub" class="w-6 h-6 object-contain"></a>
+                        <a href="#" class="text-black hover:text-cyan-accent"><img src="img/tik-tok.png" alt="TikTok" class="w-6 h-6 object-contain"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Close Hero Section -->
+
+<!-- About Section -->
+<section id="about" class="py-20 px-6 sm:px-12 lg:px-16 bg-[#16191e]">
+    <div class="container mx-auto">
+        <div class="flex flex-wrap items-center">
+            <!-- Mask Image -->
+            <div class="w-full lg:w-5/12 mb-10 lg:mb-0 flex justify-center">
+                <img src="img/kindpng_5023805.png" alt="About Mask" class="w-64 sm:w-80 lg:w-96 drop-shadow-2xl mix-blend-screen opacity-90">
+            </div>
+            
+            <!-- About Content -->
+            <div class="w-full lg:w-7/12 lg:pl-10">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-8">
+                    About <span class="text-cyan-accent">Me</span>
+                </h2>
+                
+                <h3 class="text-xl font-bold text-white mb-2">Biodata</h3>
+                <p class="text-gray-300 leading-relaxed mb-6 text-sm lg:text-base">
+                    Saya merupakan siswa dari jurusan Rekayasa Perangkat Lunak (RPL) di SMKN 1 Purwosari. Saya sendiri sangat tertarik dengan bagaimana cara dunia digital dalam kehidupan kita bekerja, oleh karena itu saya ingin memperdalam pengetahuan saya dengan masuk ke jurusan RPL ini.
+                </p>
+                
+                <h3 class="text-xl font-bold text-white mb-2">Pengalaman</h3>
+                <p class="text-gray-300 leading-relaxed mb-10 text-sm lg:text-base">
+                    Saya pernah mengikuti lomba di... dan aktif menjadi ketua dari ekstra Ethic, yaitu ektra yang mengajari murid baru tentang programming
+                </p>
+
+                <!-- Tech Stack & Tools -->
+                <div class="mt-8">
+                    <h3 class="text-lg font-bold text-white mb-6 text-center lg:text-left">Tech Stack & Tools</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Design -->
+                        <div class="bg-gray-200 rounded-lg p-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-black font-semibold text-sm">Design &</p>
+                                <p class="text-black font-semibold text-sm">Prototyping</p>
+                            </div>
+                            <img src="img/figma.png" alt="Figma" class="w-8 h-8 object-contain">
+                        </div>
+                        
+                        <!-- Frontend -->
+                        <div class="bg-cyan-accent rounded-lg p-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-black font-semibold text-sm">Frontend</p>
+                                <p class="text-black font-semibold text-sm">Development</p>
+                            </div>
+                            <div class="flex gap-1">
+                                <img src="img/text.png" alt="HTML5" class="w-6 h-6 object-contain">
+                                <img src="img/css-3.png" alt="CSS3" class="w-6 h-6 object-contain">
+                                <img src="img/js.png" alt="JS" class="w-6 h-6 object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Workflow -->
+                        <div class="bg-gray-200 rounded-lg p-3 flex items-center justify-between">
+                            <div>
+                                <p class="text-black font-semibold text-sm">Tools &</p>
+                                <p class="text-black font-semibold text-sm">Workflow</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <img src="img/logo.png" alt="VSCode" class="w-7 h-7">
+                                <img src="img/github.png" alt="GitHub" class="w-7 h-7 object-contain">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Close About Section -->
+
+<!-- Project Section -->
+<section id="project" class="py-24 overflow-hidden">
+    <div class="container mx-auto px-4 mb-10 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white uppercase">PROJECT</h2>
+    </div>
+
+    <!-- Scrolling Container -->
+    <div class="relative w-full overflow-hidden flex">
+        <div class="animate-scroll gap-6 px-6">
+            <!-- Kita render 2 kali kumpulan item agar loop sempurna -->
+            
+            <!-- --- Set 1 --- -->
+            <!-- Item 1: Creative Agency -->
+            <div class="w-80 lg:w-100 shrink-0 bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                <div class="h-48 overflow-hidden bg-white p-4">
+                    <img src="img/other-porto (1).png" alt="Creative Agency" class="w-full h-full object-cover rounded-t-xl">
+                </div>
+                <div class="bg-cyan-accent p-6 flex-1">
+                    <h3 class="text-xl font-bold text-black mb-3">Creative Agency Landing Page</h3>
+                    <p class="text-black text-sm mb-4 leading-relaxed">
+                        Merancang antarmuka website modern dan minimalis untuk penyedia layanan digital. Berfokus pada kejelasan hirarki visual serta navigasi yang ramah pengguna.
+                    </p>
+                    <p class="text-black text-sm font-semibold">Tools: Figma • UI/UX Design • Web Design</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Portfolio -->
+            <div class="w-80 lg:w-100 shrink-0hite rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                <div class="h-48 overflow-hidden bg-[#0a0045] relative">
+                    <img src="img/other-porto (2).png" alt="Portfolio" class="w-full h-full object-cover">
+                </div>
+                <div class="bg-cyan-accent p-6 flex-1">
+                    <h3 class="text-xl font-bold text-black mb-3">Personal Developer Portfolio</h3>
+                    <p class="text-black text-sm mb-4 leading-relaxed">
+                        Website portofolio personal interaktif bergaya dark mode. Dibuat untuk menampilkan skills, proyek terbaru, dan identitas profesional sebagai Frontend Developer.
+                    </p>
+                    <p class="text-black text-sm font-semibold">Tools: HTML, CSS, JavaScript, Figma</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Rental PS -->
+            <div class="w-80 lg:w-100 shrink-0 bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                <div class="h-48 overflow-hidden bg-[#111827]">
+                    <img src="img/other-porto (3).png" alt="Rental PS" class="w-full h-full object-cover">
+                </div>
+                <div class="bg-cyan-accent p-6 flex-1">
+                    <h3 class="text-xl font-bold text-black mb-3">Rental PlayStation Landing Page</h3>
+                    <p class="text-black text-sm mb-4 leading-relaxed">
+                        Landing page tempat penyewaan konsol game dengan nuansa dark gaming. Dilengkapi informasi layanan, lokasi, dan alur pemesanan yang cepat bagi pengunjung.
+                    </p>
+                    <p class="text-black text-sm font-semibold">Tools: UI/UX Design, Frontend Dev, Tailwind CSS</p>
+                </div>
+            </div>
+
+            <!-- Item 4: Slot 1 -->
+            <div class="w-80 lg:w-100 shrink-0 bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col opacity-70">
+                <div class="h-48 flex items-center justify-center bg-gray-300">
+                    <p class="text-gray-500 font-bold text-lg">Coming Soon</p>
+                </div>
+                <div class="bg-gray-400 p-6 flex-1 flex flex-col justify-center items-center">
+                    <h3 class="text-xl font-bold text-white mb-2">New Project Title</h3>
+                    <p class="text-white text-sm text-center">Deskripsi proyek yang akan datang akan ditampilkan di sini.</p>
+                </div>
+            </div>
+
+            <!-- Item 5: Slot 2 -->
+            <div class="w-80 lg:w-100 shrink-0 bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col opacity-70">
+                <div class="h-48 flex items-center justify-center bg-gray-300">
+                    <p class="text-gray-500 font-bold text-lg">Coming Soon</p>
+                </div>
+                <div class="bg-gray-400 p-6 flex-1 flex flex-col justify-center items-center">
+                    <h3 class="text-xl font-bold text-white mb-2">New Project Title</h3>
+                    <p class="text-white text-sm text-center">Deskripsi proyek yang akan datang akan ditampilkan di sini.</p>
+                </div>
+            </div>
+
+            <!-- --- Set 2 (Duplikasi untuk Seamless Loop) --- -->
+            <div class="w-80 lg:w-100 shrink-0 bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                <div class="h-48 overflow-hidden bg-white p-4">
+                    <img src="img/other-porto (1).png" alt="Creative Agency" class="w-full h-full object-cover rounded-t-xl">
+                </div>
+                <div class="bg-cyan-accent p-6 flex-1">
+                    <h3 class="text-xl font-bold text-black mb-3">Creative Agency Landing Page</h3>
+                    <p class="text-black text-sm mb-4 leading-relaxed">
+                        Merancang antarmuka website modern dan minimalis untuk penyedia layanan digital. Berfokus pada kejelasan hirarki visual serta navigasi yang ramah pengguna.
+                    </p>
+                    <p class="text-black text-sm font-semibold">Tools: Figma • UI/UX Design • Web Design</p>
+                </div>
+            </div>
+
+            <div class="w-80 lg:w-100 shrink-0 bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                <div class="h-48 overflow-hidden bg-[#0a0045] relative">
+                    <img src="img/other-porto (2).png" alt="Portfolio" class="w-full h-full object-cover">
+                </div>
+                <div class="bg-cyan-accent p-6 flex-1">
+                    <h3 class="text-xl font-bold text-black mb-3">Personal Developer Portfolio</h3>
+                    <p class="text-black text-sm mb-4 leading-relaxed">
+                        Website portofolio personal interaktif bergaya dark mode. Dibuat untuk menampilkan skills, proyek terbaru, dan identitas profesional sebagai Frontend Developer.
+                    </p>
+                    <p class="text-black text-sm font-semibold">Tools: HTML, CSS, JavaScript, Figma</p>
+                </div>
+            </div>
+
+            <div class="w-80 lg:w-100 shrink-0 bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col">
+                <div class="h-48 overflow-hidden bg-[#111827]">
+                    <img src="img/other-porto (3).png" alt="Rental PS" class="w-full h-full object-cover">
+                </div>
+                <div class="bg-cyan-accent p-6 flex-1">
+                    <h3 class="text-xl font-bold text-black mb-3">Rental PlayStation Landing Page</h3>
+                    <p class="text-black text-sm mb-4 leading-relaxed">
+                        Landing page tempat penyewaan konsol game dengan nuansa dark gaming. Dilengkapi informasi layanan, lokasi, dan alur pemesanan yang cepat bagi pengunjung.
+                    </p>
+                    <p class="text-black text-sm font-semibold">Tools: UI/UX Design, Frontend Dev, Tailwind CSS</p>
+                </div>
+            </div>
+
+            <div class="w-80 lg:w-100xshrink-0gray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col opacity-70">
+                <div class="h-48 flex items-center justify-center bg-gray-300">
+                    <p class="text-gray-500 font-bold text-lg">Coming Soon</p>
+                </div>
+                <div class="bg-gray-400 p-6 flex-1 flex flex-col justify-center items-center">
+                    <h3 class="text-xl font-bold text-white mb-2">New Project Title</h3>
+                    <p class="text-white text-sm text-center">Deskripsi proyek yang akan datang akan ditampilkan di sini.</p>
+                </div>
+            </div>
+
+            <div class="w-80 lg:w-100 shrink-0ray-200 rounded-2xl overflow-hidden shadow-lg flex flex-col opacity-70">
+                <div class="h-48 flex items-center justify-center bg-gray-300">
+                    <p class="text-gray-500 font-bold text-lg">Coming Soon</p>
+                </div>
+                <div class="bg-gray-400 p-6 flex-1 flex flex-col justify-center items-center">
+                    <h3 class="text-xl font-bold text-white mb-2">New Project Title</h3>
+                    <p class="text-white text-sm text-center">Deskripsi proyek yang akan datang akan ditampilkan di sini.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- Close Project Section -->
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 px-4 sm:px-8 lg:px-14 relative bg-linear-to-b from-[#121519] to-teal-900/40">
+    <div class="container mx-auto max-w-5xl">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-12 text-center uppercase">
+            CONTACT
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- Chat Room -->
+            <div class="bg-[#242124] rounded-2xl p-6 shadow-2xl border-t border-gray-700">
+                <div class="bg-[#1a171a] rounded-xl p-4">
+                    <h3 class="text-white font-semibold text-lg mb-4 flex items-center gap-2">
+                        💬 Chat Room
+                    </h3>
+
+                    <div class="bg-[#242124] rounded-xl p-4 flex flex-col gap-4 h-90 overflow-y-auto">
+                        
+                        <!-- Chat Bubble 1 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gray-300 shrink-0"></div>
+                            <div class="bg-cyan-accent rounded-r-xl rounded-bl-xl px-4 py-2">
+                                <p class="text-black text-sm font-medium">Selamat datang di web Portofolio saya 🥶</p>
+                            </div>
+                        </div>
+
+                        <!-- Chat Bubble 2 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gray-300 shrink-0"></div>
+                            <div class="bg-cyan-accent rounded-r-xl rounded-bl-xl px-4 py-2">
+                                <p class="text-black text-sm font-medium">Ready jasa buat web ga? 🤨</p>
+                            </div>
+                        </div>
+
+                        <!-- Chat Bubble 3 -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gray-300 shrink-0"></div>
+                            <div class="bg-cyan-accent rounded-r-xl rounded-bl-xl px-4 py-2">
+                                <p class="text-black text-sm font-medium">Jelas selalu siap always ready lah😘</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Contact -->
+            <div class="bg-[#2a2426] rounded-2xl p-8 shadow-2xl border-t border-gray-700 flex flex-col gap-5 h-full justify-center">
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-200 text-sm font-medium">First Name</label>
+                    <input type="text" class="bg-gray-300 rounded-lg px-4 py-3 text-black text-sm outline-none border-2 border-transparent focus:border-cyan-accent transition">
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-200 text-sm font-medium">Email</label>
+                    <input type="email" class="bg-gray-300 rounded-lg px-4 py-3 text-black text-sm outline-none border-2 border-transparent focus:border-cyan-accent transition">
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-200 text-sm font-medium">Massage</label>
+                    <textarea rows="4" class="bg-gray-300 rounded-lg px-4 py-3 text-black text-sm outline-none border-2 border-transparent focus:border-cyan-accent resize-none transition"></textarea>
+                </div>
+
+                <button class="bg-cyan-accent hover:bg-teal-400 text-black font-bold py-3 rounded-lg mt-2 transition shadow-lg w-full">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Efek Cahaya di Bawah seperti Referensi -->
+    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-3xl h-24 bg-cyan-accent/20 blur-[80px] -z-10 rounded-full pointer-events-none"></div>
+</section>
+<!-- Close Contact Section -->
+
+<script src="javascript.js"></script>
+</body>
+</html>
