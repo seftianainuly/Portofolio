@@ -24,9 +24,16 @@ hamburger.addEventListener('click', function() {
     navMenu.classList.toggle('hidden');
 });
 
+function openWhatsApp() {
+    const phoneNumber = "6285814963433"; 
+    const message = "Halo Seftian, saya melihat portofolio Anda dan tertarik untuk bekerja sama!";
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, '_blank');
+}
+
 function downloadCV() {
     const link = document.createElement('a');
-    link.href = 'pdf/CV_SEFTIAN_XI_RPL1.pdf'; // Pastikan path ini benar
+    link.href = 'CV_SEFTIAN_XI_RPL1.pdf'; // Pastikan path ini benar
     link.download = 'CV_SEFTIAN_XI_RPL1.pdf';
     document.body.appendChild(link);
     link.click();
