@@ -39,3 +39,7 @@ function downloadCV() {
     link.click();
     document.body.removeChild(link);
 }
+
+function openWhatsApp() {
+    alert('Belum dibuat :D');
+}
