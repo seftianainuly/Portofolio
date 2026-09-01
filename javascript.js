@@ -40,6 +40,6 @@ function downloadCV() {
     document.body.removeChild(link);
 }
 
-function openWhatsApp() {
+function prankSend() {
     alert('Belum dibuat :D');
 }
