@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
-/* 1. Custom Utility Color (Menghilangkan custom class warna di HTML) */
 @theme {
     --color-dark-theme: #121519;
     --color-cyan-accent: #00e6a8;
     --color-card-dark: #1e1e24;
     }
 
-/* 2. Keyframes & Animation */
 @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
