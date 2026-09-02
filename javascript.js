@@ -4,7 +4,7 @@ window.onscroll = function() {
     const fixedNav = header.offsetTop;
 
     if(window.pageYOffset > fixedNav) {
-        header.classList.add('bg-gray-900', 'shadow-lg'); // Fallback background untuk Tailwind
+        header.classList.add('bg-gray-900', 'shadow-lg');
         header.classList.remove('bg-transparent', 'py-4');
         header.classList.add('py-2');
     } else {
@@ -12,6 +12,35 @@ window.onscroll = function() {
         header.classList.add('bg-transparent', 'py-4');
     }
 };
+
+// Navbar Animate
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+const observerOptions = {
+    root: null,
+    threshold: 0.5,
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+        const currentId = entry.target.getAttribute("id");
+
+        navLinks.forEach((link) => {
+            link.classList.remove("bg-cyan-accent", "text-black");
+            link.classList.add("text-white");
+
+            if (link.getAttribute("href") === `#${currentId}`) {
+            link.classList.add("bg-cyan-accent", "text-black");
+            link.classList.remove("text-white");
+            }
+        });
+        }
+    });
+    }, observerOptions);
+
+sections.forEach((section) => observer.observe(section));
 
 // Hamburger Menu Toggle
 const hamburger = document.querySelector('#hamburger');
